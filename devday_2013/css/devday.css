@@ -1,0 +1,41 @@
+section h2.devopsdays {
+  text-transform: none;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  bottom: 0;
+  z-index: 9999;
+}
+
+.footer p small {
+  font-size: 0.65em;
+}
+
+.footer p#powered_by {
+  font-size: 0.55em;
+}
+
+.devopsdays {
+  text-transform: none;
+}
+
+small.tiny {
+    font-size: 0.4em;
+}
+
+#config-comparison pre {
+    width: 45%;
+    margin-top: 5%;
+}
+
+#config-comparison pre.left {
+    float: left;
+}
+
+#config-comparison pre.right {
+    float: right;
+}

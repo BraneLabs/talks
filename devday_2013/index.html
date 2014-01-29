@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Chef ou Puppet - O Dilema do DevOps Iniciante</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/devday.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<img src="images/devday2013_branco.png" />
+					<img src="images/DevIsland_logo.png" style="height: 20.5%;"/>
+					<img src="images/logo_patrocinadores.png" />
+				</section>
+
+				<section>
+					<h1>Chef ou Puppet?</h1>
+					<h3>O dilema do DevOps iniciante</h3>
+				</section>
+
+				<section>
+					<h2>O começo</h2>
+				</section>
+
+				<section>
+					<img src="images/belgium.png" alt="Belgica">
+          <aside class="notes" data-markdown>
+            <script type="text/template">
+             * 2007 Belgica Patrick Debois
+             * Trabalhar em todas as areas de ti
+             * Projeto com o governo, migração de um data-center.
+             * Trabalhou com testes(ficou entre dev e ops)
+             * Era frustrante a troca de contexto: Agilidade de Dev vs Previsibilidade de Ops
+            </script>
+          </aside>
+				</section>
+
+				<section>
+					<img src="images/agile_conf2008.png" alt="Agile2008">
+          <aside class="notes" data-markdown>
+            <script type="text/template">
+              * 2008 Canada Andrew Schafer.
+              * Palestra: Agile Infrastructure
+              * Somente uma pessoa foi(Patrick), nem o Andrew apareceu
+              * Para contextualizar: agile crescendo, integração continua e deploys constantes
+              * Mesmo assim, não existia algo que atravessasse a barreira de times de operação
+              * Criaram google group: Agile System Administration
+              * Discusões interessantes mas poucos usuários
+              </script>
+          </aside>
+				</section>
+
+				<section>
+					<img src="images/velocity2009.png" alt="Velocity 2009">
+          <aside class="notes" data-markdown>
+            <script type="text/template">
+              * 23 junho de 2009
+              * John Allspaw e Paul Hammond
+              * Palestra: 10+ deploys per day: Dev and Ops Cooperation at Flickr
+              * Patrick assistiu via Streaming e ficou frustrado que não poderia ir
+              * Resolveu criar sua propria conferencia na belgica
+            </script>
+          </aside>
+				</section>
+
+				<section>
+					<img src="images/devopsdays.png" alt="DevOpsDays">
+          <aside class="notes" data-markdown>
+            <script type="text/template">
+              * Juntou as palavras Dev, Ops e como eram 2 dias(Days)
+              * 30-31 outubro de 2009
+              * Muita gente boa participou(administradores, desenvolvedores, gerentes)
+            </script>
+          </aside>
+				</section>
+
+				<section>
+					<h2 class="devopsdays">
+						<span class="fragment fade-in" data-fragment-index="3">#</span>
+						DevOps
+						<span class="fragment highlight-red" data-fragment-index="1">
+							<span class="fragment fade-out" data-fragment-index="2">Days</span>
+						</span>
+					</h2>
+          <aside class="notes" data-markdown>
+            <script type="text/template">
+              * Discusões e conversas continuaram pelo twitter
+              * Hashtag #DevOps
+              * Limite de caracteres Twitter
+            </script>
+          </aside>
+				</section>
+
+				<section>
+					<img src="images/devops_conferences.png" alt="DevOps Conferences">
+          <aside class="notes" data-markdown>
+            <script type="text/template">
+              * Movimento cada vez mais forte
+              * Varias cidades do mundo
+            </script>
+          </aside>
+				</section>
+
+				<section>
+					<img src="images/interest_overtime.png" alt="DevOps Conferences">
+          <aside class="notes" data-markdown>
+            <script type="text/template">
+              * 2011 grandes "Enterprise Providers" entram no clima.
+              * IBM, HP etc
+            </script>
+          </aside>
+				</section>
+
+				<section>
+					<h2>Por que esta historia é importante?</h2>
+
+					<aside class="notes">
+						Por que se não sabemos de onde viemos, não vamos saber para onde caminhar no futuro.
+					</aside>
+				</section>
+
+				<section>
+					<h2>DevOps Não é</h2>
+					<ul>
+						<li class="fragment">Um produto</li>
+						<li class="fragment">Um padrão</li>
+						<li class="fragment">Uma especificação</li>
+						<li class="fragment">Um cargo</li>
+					</ul>
+          <aside class="notes" data-markdown>
+            <script type="text/template">
+              * Um produto
+              * Um padrão
+              * Uma especificação
+              * Um cargo
+            </script>
+          </aside>
+				</section>
+
+				<section>
+					<h2>DevOps é</h2>
+					<p class="fragment">Um movimento baseado em experiências</p>
+					<p class="fragment">Experiências sobre como desenvolvimento e operações podem trabalhar juntos</p>
+          <aside class="notes" data-markdown>
+            <script type="text/template">
+              * Um movimento baseado em experiências
+              * Experiências sobre como desenvolvimento e operações podem trabalhar juntos
+            </script>
+          </aside>
+				</section>
+
+        <section>
+          <h2>DevOps veio para</h2>
+            <p class="fragment">Cobrir o gap entre desenvolvimento e operações</p>
+            <p class="fragment">Introduzir agilidade no processo de deploy sem perder confiabilidade</p>
+            <p class="fragment">Utilizar código e suas boas práticas em provisionamento e manutenção de infra</p>
+          <aside class="notes">
+              Vamos abordar os 3 tópicos separadamente a seguir
+          </aside>
+        </section>
+
+        <section>
+          <h2>Dev vs Ops</h2>
+          <p><img src="images/WallOfConfusion.png" alt="Wall of Confusion" style="width:100%" /> <br/>
+          <small class="tiny">http://blog.eriksen.com.br/sites/default/files/uploads/shared/wall-of-confusion-en.png</small></p>
+          <aside class="notes" data-markdown>
+            <script type="text/template">
+							* Cobrir o gap entre desenvolvimento e operações
+							* equipes viviam separadas por um muro: o desenvolvimento quer mudança, operações quer estabilidade
+							* Dev -> Agile, iterações rápidas, feedback loop curto
+							* Ops -> Estabilidade. Longos períodos entre deploys. Mudança é sempre mal vista
+							* Problemas significam equipes culpando uma a outra
+							* Ops muitas vezes não sabe o que está mudando no sistema
+							* Mudança cultural
+						</script>
+					</aside>
+        </section>
+
+        <section>
+          <h2>Deploys contínuos</h2>
+          <p><img src="images/oprah.jpg" alt="Everybody gets a deployment" /><br/>
+          <small class="tiny">http://i.qkme.me/3vpghd.jpg</small></p>
+          <aside class="notes" data-markdown>
+            <script type="text/template">
+							* Introduzir agilidade no processo de deploy sem perder confiabilidade
+							* Como viabilizar?
+							* Processo de build e deploy em um único passo
+							* Comunicação entre developers e ops
+							* Infra automatizada
+							* Repositório compartilhado entre app e código da infra (todo mundo sabe onde procurar)
+							* Responsabilidade de deploy compartilhada entre equipes
+							* Observação de métricas
+						</script>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Infra as code</h2>
+          <img src="images/automate-all-the-things.png" alt="Automate all the things!"/>
+          <p><small class="tiny">http://www.opscode.com/blog/wp-content/uploads/2012/02/automate-all-the-things.png</small></p>
+          <aside class="notes" data-markdown>
+            <script type="text/template">
+							* Utilizar código e suas boas práticas em provisionamento e manutenção de infra
+							* Boas práticas de código:
+								1. Escalável
+								2. Facil manutenção
+								3. Repetivel(Para criar um ambiente só é necessario codigos, backup de dados e hardware/cloud)
+								4. Controle de versão
+								5. Peer review
+								6. Testes
+							* Vamos abordar as duas principais ferramentas a seguir, mostrar o que fazem, como fazem e suas principais diferenças
+							* Quem já tinha ouvido falar de Puppet / Quem usa Puppet?
+							* Quem já tinha ouvido falar de Chef / Quem usa Chef?
+						</script>
+          </aside>
+        </section>
+
+				<section>
+					<h1>Puppet vs Chef</h1>
+				</section>
+
+				<section>
+					<h2>Comunidade</h2>
+					<aside class="notes" data-markdown>
+            <script type="text/template">
+              * Atualmente Puppet tem uma maior user base
+              * Chef é mais utilizado nos Estados Unidos
+              * Chef tem aumentado consideravelmente sua base de usuários nos ultimos anos
+              * PuppetLabs: mais tradicional, localizada em Portland
+              * OpsCode: empresa menor e com beneficios mais agressivos, localizada em Seatle
+            </script>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Tecnologia</h2>
+					<aside class="notes" data-markdown>
+            <script type="text/template">
+              * Puppet
+                1. graph-based e model-driven environment. Ordem de execução é imposta pelo usuário atravez de dependencias(mais popular com sysadmins)
+                2. Custom DSL e extensivel com Ruby(focado em simplicidade)
+              * Chef
+                1. Força a ordem de execução(mais popular com devs)
+                2. Ruby DSL (focado em automação de cloud)
+						</script>
+					</aside>
+          </section>
+
+          <section id="config-comparison">
+            <h2>Configuração</h2>
+            <pre class="left fragment">Puppet quickstart (serverless)
+              <code data-trim>
+$ vim test.pp
+
+
+file { 'testfile-puppet':
+  path    => '/tmp/testfile-puppet',
+  ensure  => present,
+  mode    => '0640',
+  content => "I'm a test file.\n"
+}
+
+$ puppet apply test.pp
+              </code>
+            </pre>
+
+            <pre class="right fragment">Chef quickstart (solo)
+              <code data-trim>
+$ cd /var/chef/cookbooks
+$ knife cookbook create test
+$ vim test/recipes/default.rb
+
+  file "/tmp/testfile-chef" do
+    mode    "0640"
+    content "I'm a test file.\n"
+    action  :create
+  end
+
+$ chef-solo -o test -N test
+            </code>
+          </pre>
+          <aside class="notes">
+						Dá pra escrever ruby no Puppet também
+					</aside>
+        </section>
+
+				<section>
+					<h2>Documentação</h2>
+					<p><a href="http://docs.puppetlabs.com/" target="_blank">http://docs.puppetlabs.com/</a></p>
+					<p><a href="http://docs.opscode.com/" target="_blank">http://docs.opscode.com/</a></p>
+					<aside class="notes">
+						Puppet: um pouco melhor
+					</aside>
+				</section>
+
+				<section>
+					<h2>Clientes</h2>
+				</section>
+
+				<section>
+					<img src="images/facebook.png" alt="Facebook">
+					<p><a href="http://www.opscode.com/customers/" target="_blank">http://www.opscode.com/customers/</a></p>
+					<aside class="notes">
+						Facebook, DreamHost etc
+					</aside>
+				</section>
+
+				<section>
+					<img src="images/twitter.png" alt="Twitter">
+					<p><a href="http://puppetlabs.com/about/" target="_blank">http://puppetlabs.com/about</a></p>
+					<aside class="notes">
+						Twitter, Nokia etc
+					</aside>
+				</section>
+
+				<section>
+					<h2>Preço</h2>
+					<aside class="notes" data-markdown>
+            <script type="text/template">
+              * Versões Free and Open-source
+              * Puppet: 100 nodes 99 dollares/node até 79 dollares/node por 2500 nodes(anual)
+              * Chef: Privado + Suporte: 120 dollares 20 nodes até 600 dollares por 100 nodes(mensal)
+            </script>
+					</aside>
+				</section>
+
+				<section>
+					<h1>Conclusão</h1>
+					<h2 class="fragment">E então... Chef ou Puppet?</h2>
+					<h2 class="fragment">Sim!</h2>
+				</section>
+
+				<section>
+					<video class="stretch" src="videos/imagine.mp4" controls></video>
+				</section>
+
+				<section>
+					<h1>We are Brane.com</h1>
+					<h3>Daniel Naves de Carvalho</h3>
+					<h3>Gabriel Gilini</h3>
+          <p>
+            <a href="http://github.com/BraneLabs/talks" target="_blank">
+              http://github.com/BraneLabs/talks
+            </a>
+          </p>
+				</section>
+			</div>
+
+			<div class="footer">
+				<p>
+					<small>Daniel Naves de Carvalho &#149; Gabriel Gilini / </small> <small id="powered_by">Powered by <a href="http://www.wearebrane.com" target="_blank">WeAreBrane.com</a></small>
+				</p>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
